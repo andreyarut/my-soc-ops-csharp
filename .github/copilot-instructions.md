@@ -32,6 +32,18 @@ Blazor WebAssembly (.NET 10) social bingo game. Players mark squares matching ic
 - New components must be added to `_Imports.razor`
 - New questions use lowercase strings matching existing format in `Questions.cs`
 
+## Design Guide
+
+- Theme direction: cinematic sci-fi with strong contrast, atmospheric backgrounds, and clear visual hierarchy
+- Typography: expressive display headings + readable body text; avoid default system font stacks unless already in use
+- Colors: define and reuse CSS variables for palette tokens (primary, accent, surface, border, text)
+- Motion: prefer a few meaningful animations (screen intro, modal reveal, win state) over many micro-animations
+- Components: preserve existing gameplay behavior while redesigning visuals; avoid changing service-driven state flow
+- Accessibility baseline: keep controls legible, maintain visible focus/active states, and preserve button/aria semantics
+- Responsiveness: verify Start/Game/Modal layouts on mobile and desktop; no clipped text or overflowing controls
+- Consistency: implement new styles in `wwwroot/css/app.css` utilities and compose via class names in Razor components
+- Scope guardrails: no external CSS frameworks, no inline styles, and no component-local styling patterns that bypass `app.css`
+
 ## Commands
 
 ```bash

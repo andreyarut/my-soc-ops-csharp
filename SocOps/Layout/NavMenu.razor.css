@@ -1,14 +1,19 @@
 .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(99, 156, 255, 0.25);
+    border: 1px solid rgba(120, 206, 255, 0.35);
 }
 
 .top-row {
     min-height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(6, 11, 27, 0.75);
+    border-bottom: 1px solid rgba(130, 176, 255, 0.28);
 }
 
 .navbar-brand {
     font-size: 1.1rem;
+    color: #f0f6ff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .bi {
@@ -38,31 +43,34 @@
     padding-bottom: 0.5rem;
 }
 
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
+.nav-item:first-of-type {
+    padding-top: 1rem;
+}
 
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
+.nav-item:last-of-type {
+    padding-bottom: 1rem;
+}
 
-    .nav-item ::deep a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item ::deep a {
+    color: #d9e6ff;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    border: 1px solid transparent;
+}
 
 .nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
+    background: linear-gradient(120deg, rgba(85, 157, 255, 0.38), rgba(255, 79, 79, 0.24));
+    border-color: rgba(122, 223, 255, 0.5);
+    color: #f8fcff;
 }
 
 .nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: rgba(111, 183, 255, 0.12);
+    border-color: rgba(122, 223, 255, 0.4);
+    color: #eef8ff;
 }
 
 @media (min-width: 641px) {

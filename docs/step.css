@@ -1,13 +1,13 @@
         :root {
-            --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-code: #1a1a2e;
-            --neon-cyan: #00f5ff;
-            --neon-magenta: #ff00ff;
-            --neon-purple: #b366ff;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --border-color: #2a2a3a;
+            --bg-dark: #04050c;
+            --bg-card: #0f1427;
+            --bg-code: #151d35;
+            --neon-cyan: #6ef5ff;
+            --neon-magenta: #ff6666;
+            --neon-purple: #ffd36e;
+            --text-primary: #f7f9ff;
+            --text-secondary: #b3bed9;
+            --border-color: #33456f;
             --success-green: #4ec9b0;
             --warning-yellow: #dcdcaa;
         }
@@ -19,7 +19,7 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Exo 2', sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.7;
@@ -34,17 +34,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px),
-                linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background:
+                radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1px),
+                radial-gradient(circle at 72% 29%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1px),
+                radial-gradient(circle at 34% 78%, rgba(255, 255, 255, 0.45) 0 1px, transparent 1px),
+                linear-gradient(90deg, rgba(110, 245, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(rgba(110, 245, 255, 0.04) 1px, transparent 1px);
+            background-size: auto, auto, auto, 60px 60px, 60px 60px;
             pointer-events: none;
             z-index: -1;
         }
 
         /* Header */
         .header {
-            background: var(--bg-card);
+            background: linear-gradient(140deg, rgba(15, 20, 39, 0.95), rgba(18, 12, 37, 0.9));
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 2rem;
             position: sticky;
@@ -75,8 +78,11 @@
 
         .header-title {
             font-size: 1.25rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -158,12 +164,12 @@
         }
 
         .step-link:hover {
-            background: rgba(0,245,255,0.1);
+            background: rgba(0, 245, 255, 0.1);
             color: var(--text-primary);
         }
 
         .step-link.active {
-            background: linear-gradient(135deg, rgba(0,245,255,0.2), rgba(255,0,255,0.2));
+            background: linear-gradient(135deg, rgba(110, 245, 255, 0.2), rgba(255, 102, 102, 0.2));
             color: var(--text-primary);
             border-left: 3px solid var(--neon-cyan);
         }
@@ -220,7 +226,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Markdown Styles */
@@ -277,7 +285,8 @@
             font-weight: 600;
         }
 
-        .markdown ul, .markdown ol {
+        .markdown ul,
+        .markdown ol {
             margin: 1rem 0 1.5rem 1.5rem;
             color: var(--text-secondary);
         }
@@ -324,7 +333,7 @@
             font-size: 0.875em;
         }
 
-        .markdown :not(pre) > code {
+        .markdown :not(pre)>code {
             background: var(--bg-code);
             padding: 0.2em 0.4em;
             border-radius: 4px;
@@ -434,7 +443,8 @@
             margin: 1.5rem 0;
         }
 
-        .markdown th, .markdown td {
+        .markdown th,
+        .markdown td {
             padding: 0.75rem 1rem;
             border: 1px solid var(--border-color);
             text-align: left;
@@ -451,7 +461,7 @@
         }
 
         .markdown tr:hover td {
-            background: rgba(0,245,255,0.05);
+            background: rgba(0, 245, 255, 0.05);
         }
 
         /* Horizontal rule */
@@ -499,7 +509,7 @@
             .sidebar {
                 display: none;
             }
-            
+
             .main {
                 padding: 1.5rem;
             }
@@ -522,11 +532,67 @@
         }
 
         /* --- Locale Picker --- */
-        .locale-picker { position: relative; display: inline-flex; }
-        .locale-toggle { display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-secondary); font-size: 1rem; line-height: 1; transition: all 0.2s; cursor: pointer; }
-        .locale-toggle:hover { background: var(--neon-cyan); color: #fff; border-color: var(--neon-cyan); }
-        .locale-picker ul { display: none; position: absolute; top: 100%; right: 0; margin: 4px 0 0; padding: 4px 0; list-style: none; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 100; min-width: 180px; }
-        .locale-picker li { padding: 8px 16px; cursor: pointer; font-size: 0.9rem; color: var(--text-primary); white-space: nowrap; transition: background 0.15s; }
-        .locale-picker li:hover { background: var(--neon-cyan); color: #fff; }
-        .locale-picker li.active { font-weight: 600; color: var(--neon-cyan); }
-        .locale-picker li.active:hover { color: #fff; }
+        .locale-picker {
+            position: relative;
+            display: inline-flex;
+        }
+
+        .locale-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .locale-toggle:hover {
+            background: var(--neon-cyan);
+            color: #fff;
+            border-color: var(--neon-cyan);
+        }
+
+        .locale-picker ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin: 4px 0 0;
+            padding: 4px 0;
+            list-style: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            min-width: 180px;
+        }
+
+        .locale-picker li {
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            transition: background 0.15s;
+        }
+
+        .locale-picker li:hover {
+            background: var(--neon-cyan);
+            color: #fff;
+        }
+
+        .locale-picker li.active {
+            font-weight: 600;
+            color: var(--neon-cyan);
+        }
+
+        .locale-picker li.active:hover {
+            color: #fff;
+        }

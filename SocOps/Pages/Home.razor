@@ -4,7 +4,7 @@
 @inject BingoGameService GameService
 @implements IDisposable
 
-<PageTitle>Soc Ops - Social Bingo</PageTitle>
+<PageTitle>Galactic Social Ops - Cantina Bingo</PageTitle>
 
 @if (GameService.CurrentGameState == GameState.Start)
 {
@@ -12,12 +12,9 @@
 }
 else
 {
-    <GameScreen
-        Board="@GameService.Board"
-        WinningSquareIds="@GameService.WinningSquareIds"
-        HasBingo="@(GameService.CurrentGameState == GameState.Bingo)"
-        OnSquareClick="@GameService.HandleSquareClick"
-        OnReset="@GameService.ResetGame" />
+    <GameScreen Board="@GameService.Board" WinningSquareIds="@GameService.WinningSquareIds"
+                HasBingo="@(GameService.CurrentGameState == GameState.Bingo)" OnSquareClick="@GameService.HandleSquareClick"
+                OnReset="@GameService.ResetGame" />
 
     @if (GameService.ShowBingoModal)
     {
